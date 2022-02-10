@@ -1,5 +1,10 @@
 # Yolov4 - TensorRT | Fps Arttırma
 
+Benim Kodlarım:
+
+
+
+
 1. Install "pycuda".
 
    ```shell
