@@ -44,8 +44,6 @@
 
    This is a screenshot of the demo against JetPack-4.4, i.e. TensorRT 7.
 
-   !["yolov4-416" detection result on dog.jpg](doc/dog_trt_yolov4_416.jpg)
-
 
 
 6. Similar to step 5 of Demo #3, I created an "eval_yolo.py" for evaluating mAP of the TensorRT yolov3/yolov4 engines.  Refer to [README_mAP.md](README_mAP.md) for details.
