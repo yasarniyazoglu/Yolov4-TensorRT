@@ -2,32 +2,13 @@
 
 Benim Kodlarım:
 
-The code in this repository was tested on Jetson Nano, TX2, and Xavier NX DevKits. In order to run the demos below, first make sure you have the proper version of image (JetPack) installed on the target Jetson system. For example, Setting up Jetson Nano: The Basics and Setting up Jetson Xavier NX.
+python3 darknet_video.py --weights yolov4_ders.weights --config_file yolov4_ders.cfg --input salca.mp4
 
-More specifically, the target Jetson system must have TensorRT libraries installed.
+python3 yolo_to_onnx.py -m yolov4_ders
 
+python3 onnx_to_tensorrt.py -m yolov4_ders
 
-You could check which version of TensorRT has been installed on your Jetson system by looking at file names of the libraries. For example, TensorRT v5.1.6 (JetPack-4.2.2) was present on one of my Jetson Nano DevKits.
-
-*******************************************
-$ ls /usr/lib/aarch64-linux-gnu/libnvinfer.so*
-/usr/lib/aarch64-linux-gnu/libnvinfer.so
-/usr/lib/aarch64-linux-gnu/libnvinfer.so.5
-/usr/lib/aarch64-linux-gnu/libnvinfer.so.5.1.6
-**********************************************
-
-
-
-Or if you plan to run Demo #4 and Demo #5, you'd need to have "protobuf" installed. I recommend installing "protobuf-3.8.0" using my install_protobuf-3.8.0.sh script. This script would take a couple of hours to finish on a Jetson system. Alternatively, doing pip3 install with a recent version of "protobuf" should also work (but might run a little bit slowlier).
-
-In case you are setting up a Jetson Nano, TX2 or Xavier NX from scratch to run these demos, you could refer to the following blog posts.
-
-JetPack-4.6
-JetPack-4.5
-Setting up Jetson Xavier NX
-JetPack-4.4 for Jetson Nano
-JetPack-4.3 for Jetson Nano
-
+python3 trt_yolo.py --video yolo/salca.mp4 -m yolov4_ders
 
 
 1. Install "pycuda".
