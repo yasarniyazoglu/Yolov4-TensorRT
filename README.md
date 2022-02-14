@@ -2,6 +2,35 @@
 
 Benim Kodlarım:
 
+The code in this repository was tested on Jetson Nano, TX2, and Xavier NX DevKits. In order to run the demos below, first make sure you have the proper version of image (JetPack) installed on the target Jetson system. For example, Setting up Jetson Nano: The Basics and Setting up Jetson Xavier NX.
+
+More specifically, the target Jetson system must have TensorRT libraries installed.
+
+Demo #1 and Demo #2: works for TensorRT 3.x+,
+Demo #3: requires TensoRT 5.x+,
+Demo #4 and Demo #5: requires TensorRT 6.x+.
+Demo #6 part 1: INT8 requires TensorRT 6.x+ and only works on GPUs with CUDA compute 6.1+.
+Demo #6 part 2: DLA core requires TensorRT 7.x+ (is only tested on Jetson Xavier NX).
+Demo #7: requires TensorRT 7.x+.
+You could check which version of TensorRT has been installed on your Jetson system by looking at file names of the libraries. For example, TensorRT v5.1.6 (JetPack-4.2.2) was present on one of my Jetson Nano DevKits.
+
+$ ls /usr/lib/aarch64-linux-gnu/libnvinfer.so*
+/usr/lib/aarch64-linux-gnu/libnvinfer.so
+/usr/lib/aarch64-linux-gnu/libnvinfer.so.5
+/usr/lib/aarch64-linux-gnu/libnvinfer.so.5.1.6
+Furthermore, all demo programs in this repository require "cv2" (OpenCV) module for python3. You could use the "cv2" module which came in the JetPack. Or, if you'd prefer building your own, refer to Installing OpenCV 3.4.6 on Jetson Nano for how to build from source and install opencv-3.4.6 on your Jetson system.
+
+If you plan to run Demo #3 (SSD), you'd also need to have "tensorflow-1.x" installed. You could probably use the official tensorflow wheels provided by NVIDIA, or refer to Building TensorFlow 1.12.2 on Jetson Nano for how to install tensorflow-1.12.2 on the Jetson system.
+
+Or if you plan to run Demo #4 and Demo #5, you'd need to have "protobuf" installed. I recommend installing "protobuf-3.8.0" using my install_protobuf-3.8.0.sh script. This script would take a couple of hours to finish on a Jetson system. Alternatively, doing pip3 install with a recent version of "protobuf" should also work (but might run a little bit slowlier).
+
+In case you are setting up a Jetson Nano, TX2 or Xavier NX from scratch to run these demos, you could refer to the following blog posts.
+
+JetPack-4.6
+JetPack-4.5
+Setting up Jetson Xavier NX
+JetPack-4.4 for Jetson Nano
+JetPack-4.3 for Jetson Nano
 
 
 
