@@ -10,6 +10,15 @@ python3 onnx_to_tensorrt.py -m yolov4_ders
 
 python3 trt_yolo.py --video yolo/salca.mp4 -m yolov4_ders
 
+Or if you plan to run Demo #4 and Demo #5, you'd need to have "protobuf" installed.  I recommend installing "protobuf-3.8.0" using my [install_protobuf-3.8.0.sh](https://github.com/jkjung-avt/jetson_nano/blob/master/install_protobuf-3.8.0.sh) script.  This script would take a couple of hours to finish on a Jetson system.  Alternatively, doing `pip3 install` with a recent version of "protobuf" should also work (but might run a little bit slowlier).
+
+In case you are setting up a Jetson Nano, TX2 or Xavier NX from scratch to run these demos, you could refer to the following blog posts.
+
+* [JetPack-4.6](https://jkjung-avt.github.io/jetpack-4.6/)
+* [JetPack-4.5](https://jkjung-avt.github.io/jetpack-4.5/)
+* [Setting up Jetson Xavier NX](https://jkjung-avt.github.io/setting-up-xavier-nx/)
+* [JetPack-4.4 for Jetson Nano](https://jkjung-avt.github.io/jetpack-4.4/)
+* [JetPack-4.3 for Jetson Nano](https://jkjung-avt.github.io/jetpack-4.3/)
 
 1. Install "pycuda".
 
